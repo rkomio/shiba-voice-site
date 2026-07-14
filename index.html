@@ -51,7 +51,17 @@
   .hero { text-align: center; padding: 72px 0 56px; }
   .hero img { width: 112px; height: 112px; border-radius: 26px; }
   .hero h1 { font-size: 2rem; margin: 20px 0 8px; letter-spacing: 0.02em; }
-  .hero .catch { font-size: 1.25rem; color: var(--indigo); font-weight: 600; margin: 0 0 28px; }
+  .hero .catch { font-size: 1.25rem; color: var(--indigo); font-weight: 600; margin: 0 0 16px; }
+  .badge {
+    display: inline-block;
+    background: var(--kaki-soft);
+    color: var(--kaki);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin: 0 0 28px;
+  }
   .dl-btn {
     display: inline-block;
     background: var(--kaki);
@@ -84,6 +94,13 @@
   }
   .card h3 { margin: 0 0 8px; font-size: 1rem; }
   .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+  .card.highlight {
+    grid-column: 1 / -1;
+    border: 1px solid var(--kaki);
+    background: var(--kaki-soft);
+  }
+  .card.highlight h3 { color: var(--kaki); font-size: 1.1rem; }
+  .card.highlight p { color: var(--ink); }
 
   /* Install steps */
   ol.steps { padding-left: 0; margin: 0; counter-reset: step; list-style: none; }
@@ -142,6 +159,7 @@
     <img src="assets/shiba-voice-icon.png" alt="Shiba Voice アイコン">
     <h1>Shiba Voice</h1>
     <p class="catch">押して、喋って、書ける。</p>
+    <p class="badge">🔒 完全オンデバイス — 音声も文章も Mac の外に出ません</p>
     <a class="dl-btn" href="https://github.com/rkomio/shiba-voice-site/releases/latest/download/ShibaVoice.zip">ダウンロード（macOS）</a>
     <p class="req">macOS 26.5 (Tahoe) 以降 / Apple Silicon / Apple Intelligence オン・無料</p>
   </header>
@@ -149,6 +167,10 @@
   <section>
     <h2>機能</h2>
     <div class="features">
+      <div class="card highlight">
+        <h3>🔒 完全オンデバイス — ローカル AI で完結</h3>
+        <p>音声認識も、AI による文章の整形も、すべて Mac に内蔵されたモデル（SpeechAnalyzer と Apple Intelligence のオンデバイス LLM）で処理します。音声・文章がインターネットに送られることは一切ありません。クラウド型の音声入力サービスと違い、会話の内容が外部サーバーに残る心配がないので、仕事のメールや機密情報の下書きにも安心して使えます。</p>
+      </div>
       <div class="card">
         <h3>押しながら話すだけ</h3>
         <p>Fn + ⌥（Option）を押しながら話して、離すと入力。ホットキーは好きなキーに変更できます。</p>
@@ -162,8 +184,8 @@
         <p>「えーと」などの言いよどみを取り、読みやすい文章に整えます。喋った内容は変えすぎません。</p>
       </div>
       <div class="card">
-        <h3>完全オンデバイス</h3>
-        <p>音声認識も整文も Mac の中だけで完結。音声や文章がインターネットに送られることはありません。</p>
+        <h3>無料・広告なし</h3>
+        <p>サブスクリプションもアカウント登録も不要。ダウンロードしてすぐ使えます。</p>
       </div>
     </div>
   </section>
