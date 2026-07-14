@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shiba Voice — Mac のためのオンデバイス音声入力。ホットキーを押しながら話すだけで、どのアプリにも文字が入ります。">
+<title>Shiba Voice — Mac のためのオンデバイス音声入力</title>
+<link rel="icon" href="assets/shiba-voice-icon.png">
+<style>
+  :root {
+    --paper: #FCFBF9;
+    --surface: #F4F2EC;
+    --ink: #26221C;
+    --muted: #746D61;
+    --indigo: #3A4A63;
+    --kaki: #C05A21;
+    --kaki-soft: rgba(192, 90, 33, 0.10);
+    --line: #E7E3DA;
+    --code-bg: #F1EEE7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #191817;
+      --surface: #211F1C;
+      --ink: #E8E4DB;
+      --muted: #9C958A;
+      --indigo: #93A7C6;
+      --kaki: #E08B50;
+      --kaki-soft: rgba(224, 139, 80, 0.13);
+      --line: #33302A;
+      --code-bg: #232019;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 72px 0 56px; }
+  .hero img { width: 112px; height: 112px; border-radius: 26px; }
+  .hero h1 { font-size: 2rem; margin: 20px 0 8px; letter-spacing: 0.02em; }
+  .hero .catch { font-size: 1.25rem; color: var(--indigo); font-weight: 600; margin: 0 0 28px; }
+  .dl-btn {
+    display: inline-block;
+    background: var(--kaki);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 14px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .dl-btn:hover { opacity: 0.9; }
+  .req { color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
+
+  /* Sections */
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  h2 {
+    font-size: 1.3rem;
+    color: var(--indigo);
+    margin: 0 0 24px;
+  }
+
+  /* Features */
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+  /* Install steps */
+  ol.steps { padding-left: 0; margin: 0; counter-reset: step; list-style: none; }
+  ol.steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 20px 48px;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 2px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--kaki-soft);
+    color: var(--kaki);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.steps li strong { display: block; margin-bottom: 4px; }
+  ol.steps li p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  .path {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1px 7px;
+    font-size: 0.88em;
+  }
+
+  /* FAQ */
+  details {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 12px;
+    background: var(--surface);
+  }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); font-size: 0.92rem; margin: 12px 0 4px; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 32px 0 48px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <img src="assets/shiba-voice-icon.png" alt="Shiba Voice アイコン">
+    <h1>Shiba Voice</h1>
+    <p class="catch">押して、喋って、書ける。</p>
+    <a class="dl-btn" href="https://github.com/rkomio/shiba-voice-site/releases/latest/download/ShibaVoice.zip">ダウンロード（macOS）</a>
+    <p class="req">macOS 26.5 (Tahoe) 以降 / Apple Silicon / Apple Intelligence オン・無料</p>
+  </header>
+
+  <section>
+    <h2>機能</h2>
+    <div class="features">
+      <div class="card">
+        <h3>押しながら話すだけ</h3>
+        <p>Fn + ⌥（Option）を押しながら話して、離すと入力。ホットキーは好きなキーに変更できます。</p>
+      </div>
+      <div class="card">
+        <h3>どのアプリにもそのまま入る</h3>
+        <p>メール、ブラウザ、エディタ——いま使っているアプリのカーソル位置に直接文字が入ります。</p>
+      </div>
+      <div class="card">
+        <h3>AI がケバ取り・整文</h3>
+        <p>「えーと」などの言いよどみを取り、読みやすい文章に整えます。喋った内容は変えすぎません。</p>
+      </div>
+      <div class="card">
+        <h3>完全オンデバイス</h3>
+        <p>音声認識も整文も Mac の中だけで完結。音声や文章がインターネットに送られることはありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>インストール</h2>
+    <ol class="steps">
+      <li>
+        <strong>ダウンロードして展開</strong>
+        <p>上のボタンから ShibaVoice.zip をダウンロードし、ダブルクリックで展開。出てきた Shiba Voice を<span class="path">アプリケーション</span>フォルダに移動します。</p>
+      </li>
+      <li>
+        <strong>初回だけ、システム設定から開く</strong>
+        <p>ダブルクリックすると「開けません」と表示されます（Apple の開発者登録をしていない個人開発アプリのためで、異常ではありません）。<span class="path">システム設定 → プライバシーとセキュリティ</span> を開いて下にスクロールし、「このまま開く」を押してください。</p>
+      </li>
+      <li>
+        <strong>マイクとアクセシビリティを許可</strong>
+        <p>初回起動時にマイクの使用許可を求められるので「許可」。続いて <span class="path">システム設定 → プライバシーとセキュリティ → アクセシビリティ</span> で Shiba Voice をオンにします（文字を入力するために必要です）。</p>
+      </li>
+      <li>
+        <strong>使ってみる</strong>
+        <p>文字を入れたい場所にカーソルを置き、Fn + ⌥ を押しながら話してください。キーを離すと、整った文章が入力されます。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>よくある質問</h2>
+    <details>
+      <summary>音声はどこかに送信されますか？</summary>
+      <p>いいえ。音声認識（SpeechAnalyzer）も文章の整形（Apple Intelligence）も、すべて Mac の中で処理されます。音声・文章がインターネットに送られることはありません。</p>
+    </details>
+    <details>
+      <summary>「開発元を検証できません」と警告が出ます</summary>
+      <p>Shiba Voice は Apple の開発者登録（有料）をしていない個人開発アプリのため、初回だけこの警告が出ます。インストール手順 2 の「このまま開く」で起動できます。アプリの中身が危険という意味ではありません。</p>
+    </details>
+    <details>
+      <summary>アップデートはどうやりますか？</summary>
+      <p>新しいバージョンを同じボタンからダウンロードして、アプリケーションフォルダに上書きしてください。仕組み上、更新後にアクセシビリティなどの許可の入れ直しが必要になることがあります。</p>
+    </details>
+    <details>
+      <summary>Apple Intelligence が使えないと言われます</summary>
+      <p><span class="path">システム設定 → Apple Intelligence と Siri</span> で Apple Intelligence をオンにしてください。オンにできない場合は、お使いの Mac が対応機種（Apple Silicon 搭載・macOS 26.5 以降）かご確認ください。</p>
+    </details>
+  </section>
+
+  <footer>
+    © 2026 Shiba Voice
+  </footer>
+
+</div>
+
+</body>
+</html>
